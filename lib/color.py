@@ -14,12 +14,12 @@ class Color:
         self.border = border
         self.white_border = border * 4
         self.blue_modifier = 1.3
-        self.colorDetector = TCS34725()
-        self.leftLineDetector = LineDetector('Y11')
-        self.rightLineDetector = LineDetector('Y12')
+        self.color_detector = TCS34725()
+        self.left_line_detector = LineDetector('Y11')
+        self.right_line_detector = LineDetector('Y12')
 
     def raw(self):
-        red, green, blue, c = self.colorDetector.get_raw_data()
+        red, green, blue, c = self.color_detector.get_raw_data()
         if self.debug:
             print(red, green, blue)
         return red, green, blue
@@ -45,10 +45,10 @@ class Color:
         return self._is_color(blue * self.blue_modifier, red, green)
 
     def left_black(self):
-        return self.leftLineDetector.is_path()
+        return self.left_line_detector.is_path()
 
     def right_black(self):
-        return self.rightLineDetector.is_path()
+        return self.right_line_detector.is_path()
 
     def _middle(self, a, b):
         return abs((a + b) / 2)
