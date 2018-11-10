@@ -6,6 +6,8 @@ class Color:
     def __init__(self, debug = False, border = 15):
         self.debug = debug
         self.border = border
+        self.white_border = border * 4
+        self.blue_modifier = 1.3
         self.tc = TCS34725()
 
     def raw(self):
@@ -18,6 +20,10 @@ class Color:
         red, green, blue = self.raw()
         return red < self.border and green < self.border and blue < self.border
 
+    def is_white(self):
+        red, green, blue = self.raw()
+        return red > self.white_border and green > self.white_border and blue > self.white_border
+
     def is_red(self):
         red, green, blue = self.raw()
         return self._is_color(red, green, blue)
@@ -28,7 +34,7 @@ class Color:
 
     def is_blue(self):
         red, green, blue = self.raw()
-        return self._is_color(blue * 1.3, red, green)
+        return self._is_color(blue * self.blue_modifier, red, green)
 
     def _middle(self, a, b):
         return abs((a + b) / 2)
