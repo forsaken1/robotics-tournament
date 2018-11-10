@@ -3,7 +3,7 @@ class Engine:
         pass
 
     def move(self):
-        pass
+        print('move!')
 
     def stop(self):
         pass

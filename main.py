@@ -4,7 +4,7 @@
 
 # print(get_distance())
 
-## end distance example
+## End distance example
 
 
 ## Color example
@@ -20,9 +20,19 @@
 ## End color example
 
 
+## Engines example
+
+from lib.engine import Engine
+
+engine = Engine()
+engine.move()
+
+## End engine example
+
+
 ## Start tournament
 
-from lib.tournament import Tournament
+# from lib.tournament import Tournament
 
-tournament = Tournament()
-tournament.start()
+# tournament = Tournament()
+# tournament.start()
