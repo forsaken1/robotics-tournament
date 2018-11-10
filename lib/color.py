@@ -9,10 +9,29 @@ class Color:
         self.tc = TCS34725()
 
     def raw(self):
-        return self.tc.get_raw_data()
+        red, green, blue, c = self.tc.get_raw_data()
+        if self.debug:
+            print(red, green, blue)
+        return red, green, blue
 
     def is_path(self):
-        red, green, blue, c = self.raw()
-        if self.debug:
-            print(red, green, blue, c)
+        red, green, blue = self.raw()
         return red < self.border and green < self.border and blue < self.border
+
+    def is_red(self):
+        red, green, blue = self.raw()
+        return self._is_color(red, green, blue)
+
+    def is_green(self):
+        red, green, blue = self.raw()
+        return self._is_color(green, red, blue)
+
+    def is_blue(self):
+        red, green, blue = self.raw()
+        return self._is_color(blue * 1.3, red, green)
+
+    def _middle(self, a, b):
+        return abs((a + b) / 2)
+
+    def _is_color(self, target, other1, other2):
+        return target > self._middle(other1, other2) * 2
