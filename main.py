@@ -1,5 +1,6 @@
 import pyb
-import examples.sonar
+# import examples.sonar
+import examples.engine
 
 ## Color example
 
@@ -11,17 +12,6 @@ import examples.sonar
 #   pyb.delay(1000)
 
 ## End color example
-
-
-## Engines example
-
-from lib.engine import Engine
-
-engine = Engine()
-engine.move()
-
-## End engine example
-
 
 ## Start tournament
 
