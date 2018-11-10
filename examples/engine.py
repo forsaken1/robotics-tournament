@@ -1,14 +1,18 @@
 from lib.engine import Engine
 import pyb
 
+pyb.delay(3000)
+
 engine = Engine()
 
 while True:
-    engine.move()
-    pyb.delay(5000)
+    engine.step_right()
+    # pyb.delay(10)
 
-    engine.stop()
-    pyb.delay(2000)
+# count = 100
 
-    engine.back();
-    pyb.delay(5000)
+# for i in range(0, count):
+#     engine.step_right()
+
+# for i in range(0, count):
+#     engine.step_left()

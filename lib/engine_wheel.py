@@ -10,8 +10,8 @@ class EngineWheel:
         self.pin2.low()
 
     def stop(self):
-        self.pin1.high()
-        self.pin2.high()
+        # self.pin1.high()
+        # self.pin2.high()
 
         self.pin1.low()
         self.pin2.low()
