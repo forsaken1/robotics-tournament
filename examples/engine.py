@@ -5,14 +5,16 @@ pyb.delay(3000)
 
 engine = Engine()
 
-while True:
+count = 24
+
+for i in range(0, count):
+    engine.step()
+
+for i in range(0, count):
+    engine.step_back()
+
+for i in range(0, count):
     engine.step_right()
-    # pyb.delay(10)
 
-# count = 100
-
-# for i in range(0, count):
-#     engine.step_right()
-
-# for i in range(0, count):
-#     engine.step_left()
+for i in range(0, count):
+    engine.step_left()

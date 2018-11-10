@@ -7,8 +7,8 @@ class Engine:
     STEP_DURATION = 10
 
     def __init__(self):
-        self.right_wheel  = EngineWheel('X5',  'X6')
-        self.left_wheel   = EngineWheel('X7',  'X8')
+        self.right_wheel  = EngineWheel('X19',  'X20')
+        self.left_wheel   = EngineWheel('X21',  'X22')
         
         self.bunch = EngineWheelBunch([self.right_wheel, self.left_wheel])
 
@@ -26,26 +26,29 @@ class Engine:
         self.left_wheel.back()
 
     def right(self):
-        self.right_wheel.move()
-        self.left_wheel.back()
+        self.left_wheel.move()
+        self.right_wheel.back()
 
     def step(self):
         self.move()
         self._end_step()
+        pyb.delay(self.STEP_DURATION)
 
     def step_back(self):
         self.back()
         self._end_step()
+        pyb.delay(self.STEP_DURATION)
 
     def step_left(self):
         self.left()
         self._end_step()
+        pyb.delay(self.STEP_DURATION * 2)
 
     def step_right(self):
         self.right()
         self._end_step()
+        pyb.delay(self.STEP_DURATION * 2)
 
     def _end_step(self):
         pyb.delay(self.STEP_DURATION)
         self.bunch.stop()
-        # pyb.delay(self.STEP_DURATION)
