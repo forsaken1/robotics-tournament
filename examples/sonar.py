@@ -1,8 +1,11 @@
 ## Distance example
+import pyb
 from lib.sonar import *
 
-sonar = Sonar()
+sonar = Sonar(True)
 
-print(sonar.get_distance())
+while True:
+    sonar.get_distance()
+    pyb.delay(500)
 
 ## end distance example
