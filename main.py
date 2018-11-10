@@ -1,16 +1,9 @@
-## Distance example
-
-# from distance import *
-
-# print(get_distance())
-
-## End distance example
-
+import pyb
+import examples.sonar
 
 ## Color example
 
 # from sensors.color import *
-# import pyb
 
 # color = Color(debug=True)
 # while True:
