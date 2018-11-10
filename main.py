@@ -1,20 +1,28 @@
 ## Distance example
 
-from distance import *
+# from distance import *
 
-print(get_distance())
+# print(get_distance())
 
 ## end distance example
 
 
 ## Color example
 
-from sensors.color import *
-import pyb
+# from sensors.color import *
+# import pyb
 
-color = Color(debug=True)
-while True:
-  print(color.is_path())
-  pyb.delay(1000)
+# color = Color(debug=True)
+# while True:
+#   print(color.is_path())
+#   pyb.delay(1000)
 
 ## End color example
+
+
+## Start tournament
+
+from lib.tournament import Tournament
+
+tournament = Tournament()
+tournament.start()
