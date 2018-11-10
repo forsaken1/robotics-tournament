@@ -2,9 +2,9 @@ import os.path
 from lib.line_detector import LineDetector
 
 if os.path.isfile('./colorSensor.py'):
-    from colorSensor import TCS34725
+    from color_sensor import TCS34725
 else:
-    from colorSensorMock import TCS34725
+    from color_sensor_mock import TCS34725
 
 class Color:
     """Color detection library"""

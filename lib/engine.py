@@ -1,6 +1,6 @@
 from pyb import Pin
-from engineWheel import EngineWheel
-from engineWheelBunch import EngineWheelBunch
+from engine_wheel import EngineWheel
+from engine_wheel_bunch import EngineWheelBunch
 
 class Engine:
     STEP_DURATION = 50
