@@ -11,5 +11,5 @@ class BlackLineImproved(BlackLine):
             self.engine.step_right()
         elif self.color.left_black():
             self.engine.step_left()
-        else
+        else:
             self.engine.step()
