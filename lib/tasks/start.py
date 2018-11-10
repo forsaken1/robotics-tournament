@@ -11,7 +11,7 @@ class Start(Task):
         self.engine = Engine()
 
     def run(self):
-        if self.color.is_white():
-            self.engine.step()
-        else:
+        if self.color.is_path():
             self.passed = True
+        else:
+            self.engine.step()
