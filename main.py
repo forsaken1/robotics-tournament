@@ -1,5 +1,5 @@
-import pyb
-import examples.sonar
+# import pyb
+# import examples.sonar
 
 ## Color example
 
@@ -15,17 +15,17 @@ import examples.sonar
 
 ## Engines example
 
-from lib.engine import Engine
+# from lib.engine import Engine
 
-engine = Engine()
-engine.move()
+# engine = Engine()
+# engine.move()
 
 ## End engine example
 
 
 ## Start tournament
 
-# from lib.tournament import Tournament
+from lib.tournament import Tournament
 
-# tournament = Tournament()
-# tournament.start()
+tournament = Tournament()
+tournament.start()

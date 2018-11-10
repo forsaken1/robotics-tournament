@@ -1,4 +1,9 @@
-from colorSensor import TCS34725
+import os.path
+
+if os.path.isfile('./colorSensor.py'):
+    from colorSensor import TCS34725
+else:
+    from colorSensorMock import TCS34725
 
 class Color:
     """Color detection library"""
@@ -35,6 +40,14 @@ class Color:
     def is_blue(self):
         red, green, blue = self.raw()
         return self._is_color(blue * self.blue_modifier, red, green)
+
+    # TODO
+    def left_black(self):
+        pass
+
+    # TODO
+    def right_black(self):
+        pass
 
     def _middle(self, a, b):
         return abs((a + b) / 2)

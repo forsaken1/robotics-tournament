@@ -1,13 +1,13 @@
-# from lib.color import Color
-from lib.engine import Engine
 from lib.tasks.start import Start
-from lib.tasks.first import First
+from lib.tasks.black_line import BlackLine
+from lib.tasks.labyrinth import Labyrinth
+from lib.tasks.target import Target
 
 class Tournament:
     def __init__(self):
-        self.tasks = [Start(), First()]
+        self.tasks = [Start(), BlackLine(), Labyrinth(), Target()]
 
     def start(self):
         for task in self.tasks:
-            if not task.passed:
+            while not task.passed:
                 task.run()
