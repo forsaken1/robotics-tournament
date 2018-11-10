@@ -15,7 +15,7 @@ import examples.engine
 
 ## Start tournament
 
-from lib.tournament import Tournament
+# from lib.tournament import Tournament
 
-tournament = Tournament()
-tournament.start()
+# tournament = Tournament()
+# tournament.start()

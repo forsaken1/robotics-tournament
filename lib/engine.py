@@ -1,22 +1,33 @@
 from pyb import Pin
+from engineWheel import EngineWheel
 
 class Engine:
     STEP_DURATION = 50
 
     def __init__(self):
-        self.rearLeft1 = Pin('X9', Pin.OUT_PP)
-        self.rearLeft2 = Pin('X10', Pin.OUT_PP)
+        self.frontRightWheel = EngineWheel('X5',  'X6')
+        self.frontLeftWheel  = EngineWheel('X7',  'X8')
+        self.rearRightWheel  = EngineWheel('X19', 'X20')
+        self.rearLeftWheel   = EngineWheel('X21', 'X22')
 
     def move(self):
-        self.rearLeft1.high()
-        self.rearLeft2.low()
+        self.frontRightWheel.move()
+        self.frontLeftWheel.move()
+        self.rearRightWheel.move()
+        self.rearLeftWheel.move()
+        
 
     def stop(self):
-        self.rearLeft1.high()
-        self.rearLeft2.high()
+        self.frontRightWheel.stop()
+        self.frontLeftWheel.stop()
+        self.rearRightWheel.stop()
+        self.rearLeftWheel.stop()
 
-        self.rearLeft1.low()
-        self.rearLeft2.low()
+    def back(self):
+        self.frontRightWheel.back()
+        self.frontLeftWheel.back()
+        self.rearRightWheel.back()
+        self.rearLeftWheel.back()
 
     def left(self):
         pass
