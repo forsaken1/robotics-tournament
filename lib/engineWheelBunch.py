@@ -8,7 +8,7 @@ class EngineWheelBunch:
 
     def stop(self):
         for wheel in self.wheels:
-            wheel.move()
+            wheel.stop()
 
     def back(self):
         for wheel in self.wheels:
