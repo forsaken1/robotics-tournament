@@ -37,21 +37,21 @@ class Engine:
         self.lefts.back()
 
     def step(self):
-        self.all.move()
+        self.move()
         pyb.delay(self.STEP_DURATION)
         self.all.stop()
 
     def step_back(self):
-        self.all.back()
+        self.back()
         pyb.delay(self.STEP_DURATION)
         self.all.stop()
 
     def step_left(self):
-        self.lefts.move()
+        self.left()
         pyb.delay(self.STEP_DURATION)
         self.all.stop()
 
     def step_right(self):
-        self.rights.move()
+        self.right()
         pyb.delay(self.STEP_DURATION)
         self.all.stop()
