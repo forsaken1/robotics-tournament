@@ -24,4 +24,4 @@ class Tournament:
             pyb.delay(100)
 
         if measure_count > 7:
-            self.tasks[1:]
+            self.tasks = self.tasks[1:]
