@@ -1,4 +1,5 @@
 import os.path
+from lib.line_detector import LineDetector
 
 if os.path.isfile('./colorSensor.py'):
     from colorSensor import TCS34725
@@ -13,10 +14,12 @@ class Color:
         self.border = border
         self.white_border = border * 4
         self.blue_modifier = 1.3
-        self.tc = TCS34725()
+        self.colorDetector = TCS34725()
+        self.leftLineDetector = LineDetector('Y11')
+        self.rightLineDetector = LineDetector('Y12')
 
     def raw(self):
-        red, green, blue, c = self.tc.get_raw_data()
+        red, green, blue, c = self.colorDetector.get_raw_data()
         if self.debug:
             print(red, green, blue)
         return red, green, blue
@@ -41,13 +44,11 @@ class Color:
         red, green, blue = self.raw()
         return self._is_color(blue * self.blue_modifier, red, green)
 
-    # TODO
     def left_black(self):
-        pass
+        return self.leftLineDetector.is_path()
 
-    # TODO
     def right_black(self):
-        pass
+        return self.rightLineDetector.is_path()
 
     def _middle(self, a, b):
         return abs((a + b) / 2)

@@ -13,6 +13,20 @@ import examples.engine
 
 ## End color example
 
+
+## line detector example
+
+# from lib.line_detector import LineDetector
+
+# line_detector = LineDetector('Y11', debug = True)
+# while True:
+#     print(line_detector.is_path())
+#     pyb.delay(300)
+
+
+## end line detector example
+
+
 ## Start tournament
 
 # from lib.tournament import Tournament
